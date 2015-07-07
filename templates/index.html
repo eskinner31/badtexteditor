@@ -7,6 +7,17 @@
   <link rel="stylesheet" href="public/style.css">
 </head>
 <body>
-
+  <header>
+    <a href="/notes/new"><button>New Note</button></a>
+  </header>
+  <main>
+    <h1>Past Notes</h1>
+    {{#notes}}
+      <a href="/notes/{{_id}}">{{title}}</a>
+      <form action="/notes/{{_id}}/delete" method="POST">
+        <button type="submit">delete</button>
+      </form>
+    {{/notes}}
+  </main>
 </body>
 </html>
